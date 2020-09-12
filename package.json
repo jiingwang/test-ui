@@ -4,20 +4,32 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run docz:dev",
+    "docz:dev": "docz dev",
+    "docz:build": "rimraf doc-site && docz build",
+    "docz:serve": "docz build && docz serve",
+    "build:types": "tsc -p tsconfig.build.json && cpr lib esm"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "typings": "lib/index.d.ts",
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.2",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
     "babel-eslint": "^10.1.0",
+    "docz": "^2.3.1",
     "eslint": "^7.8.1",
     "eslint-plugin-react": "^7.20.6",
+    "gatsby-plugin-less": "^4.0.3",
     "husky": "^4.3.0",
+    "less": "^3.12.2",
     "lint-staged": "^10.3.0",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "stylelint": "^13.7.1",
+    "stylelint-config-standard": "^20.0.0"
   },
   "lint-staged": {
     "components/**/*.ts(x)?": [
